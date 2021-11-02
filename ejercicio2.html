@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ejercicio 2</h2>
+    <p>ejercicio 2 
+        se abre la página, te pregunta lo que quieras y lo guardas en una variable (prompt).
+        esta variable se guarda en navegador como consideres (cookies, localstorage, sessionstorage).
+        si cierro el navegador y vuelvo a entrar en la página la variable
+        a. sigue existiendo
+        b. no existe</p>
+        <button onclick="preguntar()">preguntar</button>
+
+    <script>
+        function preguntar(){
+        var respuesta=window.prompt("Dime la capital de Chipre");
+        var almacen = window.localStorage;//se guarda aunque cierras el navegador
+        almacen.setItem("capital",respuesta);
+        var almacenprovisional=window.sessionStorage;// se borra al cerrar el navegador
+        almacenprovisional.setItem("capitalprovisional",respuesta);
+        }
+    </script>
+</body>
+</html>

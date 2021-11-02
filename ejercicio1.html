@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="alertar()">
+    <h2>Ejercicio 1</h2>
+    <p>ejercicio 1 : cookies
+        Se abre una ventana y muestra un alert.
+        si abres la ventana otra vez ya NO te muestra el alert porque te lo enseñó antes.</p>
+
+    <script>
+        function alertar()
+        {
+           
+            var visitado=document.cookie="visitado=1";//crear cookies
+        //para gestionar cookies es necesario utilizar un servidor web. En VSCode utiliza Live Server
+        var comprobarVisitado=document.cookie;//leer las cookies - todas - 
+        /*listacookies=comprobarVisitado.split(";");//se podría hacer de otra manera más elegante?
+        console.log(comprobarVisitado);
+        console.log(listacookies);
+        listacookies.forEach(function(galleta,index){
+            console.log("la galleta es " +galleta);
+            datocookie=galleta+"";//no es la forma de convertir en un string
+           
+        });//cierra la función forEach
+        */
+        if(comprobarVisitado.includes("visitado=1"))
+            {
+                console.log("no mostrar alerta");//sigue mostrando la alerta. te avisa, pero nada más
+                
+            }
+            else{
+               window.alert("Mensaje de alerta");
+            }
+           
+        }//cierra función alertar
+        
+       
+    </script>
+</body>
+</html>
